@@ -1,0 +1,91 @@
+--[[
+local vote = localize sua part de votar
+local vote2 = localize sua part de votar
+local vote3 = localize sua part de votar
+
+local AlreadyVotedOn1 = false
+local AlreadyVotedOn2 = false
+local AlreadyVotedOn3 = false
+
+
+local Debounce = false
+
+local map1votes = 0 
+local map2votes = 0 
+local map3votes = 0
+
+vote.Touched:Connect(function
+Debounce = true
+if Debounce then
+return else
+vote.Color3.New = sua cor
+task.delay(3, function
+vote.Color3.New = sua cor
+end)
+map1votes += 1
+AlreadyVotedOn1 = true
+if AlreadyVotedOn2 then
+map2votes -= 1 
+AlreadyVotedOn2 = false
+end
+if AlreadyVotedOn3 then
+map3votes -= 1 
+AlreadyVotedOn3 = false
+end
+task.wait(3)
+Debounce = false
+end
+end
+end)
+
+
+vote2.Touched:Connect(function
+Debounce = true
+if Debounce then
+return else
+Debounce = false
+vote2.Color3.New = sua cor
+task.delay(3, function
+vote2.Color3.New = sua cor
+end)
+map2votes += 1
+AlreadyVotedOn2 = true
+if AlreadyVotedOn3 then
+map3votes -= 1
+AlreadyVotedOn3 = true
+end
+if AlreadyVotedOn2 then
+map2votes -= 1 
+AlreadyVotedOn2 = false
+end
+task.wait(3)
+Debounce = false
+end
+end
+end)
+
+vote3.Touched:Connect(function
+Debounce = true
+if Debounce then
+return else
+Debounce = false
+vote3.Color3.New = sua cor
+task.delay(3, function
+vote3.Color3.New = sua cor
+end)
+map3votes += 1
+AlreadyVotedOn3 = true
+if AlreadyVotedOn2 then
+map2votes -= 1
+AlreadyVotedOn2 = false
+end 
+if AlreadyVotedOn1 then
+map1votes -= 1 
+AlreadyVotedOn1 = false
+end
+task.wait(3)
+Debounce = false
+end
+end
+end)
+
