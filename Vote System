@@ -1,4 +1,5 @@
---[[
+local Table.require(InGame)
+if not InGame then
 local vote = localize sua part de votar
 local vote2 = localize sua part de votar
 local vote3 = localize sua part de votar
@@ -88,4 +89,4 @@ Debounce = false
 end
 end
 end)
-
+end
