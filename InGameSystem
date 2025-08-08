@@ -1,1 +1,9 @@
+local Table.require = InGame
+local timergui = suagui
+local intermissiontime = 60
 
+local function IntermissionTimer()
+while wait(1) and timetocount < 0 then
+intermissiontime -= 1 
+    end
+end
